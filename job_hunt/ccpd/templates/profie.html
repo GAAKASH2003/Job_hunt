@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <style>
+    /* Add your custom styles here */
+    .owl-carousel {
+      display: flex;
+      align-items: center;
+    }
+
+    .owl-item img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="owl-carousel">
+  <div class="item"><img src="stat1.jpg" alt="Image 1"></div>
+  <div class="item"><img src="nit-logo-jpeg.png" alt="Image 2"></div>
+  <div class="item"><img src="image3.jpg" alt="Image 3"></div>
+  <!-- Add more items as needed -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+      items: 1,  // Number of items to display
+      loop: true, // Enable infinite loop
+      autoplay: true, // Autoplay the carousel
+      autoplayTimeout: 3000, // Autoplay interval in milliseconds
+      autoplayHoverPause: true // Pause autoplay on hover
+    });
+  });
+</script>
+
+</body>
+</html>

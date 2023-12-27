@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                margin: 10px;
+                padding: 10px;
+            }
+        }
+    </style>
+
+</head>
+<body> 
+    <header>
+        <h1>Candidate Profile</h1>
+    </header>
+
+    <section>
+        <div class="main" style="display: flex; justify-content: space-between;">
+            <div class="sub" >
+                <h2>Name :{{pinfo.first_name}}</h2>
+                <p>aspiring job_role: {{info.designation}}</p>
+                <p>preferred job_location: {{info.work_place}}</p>
+                <p>Email:{{pinfo.email}}</p>
+                <p>Contact:{{info.phone}}</p>
+
+            
+            </div>
+            <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAxL3JtNjA5LXNvbGlkaWNvbi13LTAwMi1wLnBuZw.png" alt="Candidate Photo" style="width: 150px;height: 150px;left: 300px;">
+        </div>
+        
+        <h2>Skills</h2>
+        <ul>
+           {% for i in skills %}
+           <li>{{i}}</li>
+           {% endfor %} 
+        </ul>
+
+     
+    </section>
+    
+    <div class="profiles" style="display: flex;justify-content: space-around;margin:20px">
+        
+        <div class="card" style="width: 18rem;">
+            <div class="card-body text-center">
+                <h3 class="card-title">Codechef</h3>
+                <img class="logo" src="https://cdn-1.webcatalog.io/catalog/codechef/codechef-icon-filled-256.png?v=1675596522631" style="height: 100px;width: 100px;">
+                <div class="info" style="align-items: end;">
+                    <h6> <b>Username:</b>{{data.obj1.username}}</h6> 
+                    <h6> <b>Rating:</b>{{data.obj1.rating}}</h6> 
+                    <h6> <b>Country Rank:</b>{{data.obj1.country_rank}}</h6> 
+                    <h6> <b>Global Rank:</b>{{data.obj1.global_rank}}</h6> 
+                </div>
+                <a href="https://www.codechef.com/users/{{data.obj1.username}}" class="btn btn-primary">Visit profile</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body text-center">
+                <h3 class="card-title">Leetcode</h3>
+                <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" style="height: 100px;width: 100px;">
+                <div class="info" style="align-items: end;">
+
+                    <h6> <b>Username:</b>{{data.obj.username}}</h6> 
+                    <h6> <b>Ranking:</b>{{data.obj.ranking}}</h6> 
+                    <h6> <b>Problems solved:</b>{{data.obj.totalSolved}}</h6> 
+                    <h6> <b>Acceptance rate:</b>{{data.obj.acceptanceRate}}</h6> 
+                </div>
+                <a href="https://leetcode.com/{{data.obj.username}}/" class="btn btn-primary">Visit profile</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body text-center">
+                <h3 class="card-title">Codeforces</h3>
+                <img class="logo" src="https://cdn.iconscout.com/icon/free/png-256/free-code-forces-3628695-3029920.png" style="height: 100px;width: 100px;">
+                <div class="info" style="align-items: end;">
+                    <h6> <b>Username:</b>{{data.obj2.username}}</h6> 
+                    <h6> <b>Ranking:</b>{{data.obj2.ranking}}</h6> 
+                    <h6> <b>Max rating :</b>{{data.obj2.maxRating}}</h6>  
+                </div>
+                <a href="https://codeforces.com/profile/{{data.obj2.username}}" class="btn btn-primary">Visit profile</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body text-center">
+                <h3 class="card-title">GeeksforGeeks</h3>
+                <img class="logo" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png" style="height: 100px;width: 100px;">
+                <div class="info" style="align-items: end;">
+                    <h6> <b>Username:</b>{{data.obj3.username}}</h6> 
+                    <h6> <b>Institute Rank:</b>{{data.obj3.institute_rank}}</h6> 
+                    <h6> <b>Problems solved:</b>{{data.obj3.total_no_of_problems}}</h6> 
+                    <h6> <b>Coding score:</b>{{data.obj3.coding_score}}</h6> 
+                </div>
+                <a href="https://auth.geeksforgeeks.org/user/{{data.obj3.username}}/?utm_source=geeksforgeeks" class="btn btn-primary">Visit profile</a>
+            </div>
+        </div>
+    </div> 
+<div class="gitprof text-center" style="width: 75%;padding-left: 300px;padding-top: 50px;">
+    <h3 class="card-title">Github</h3>
+    <img class="logo" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" style="height: 100px;width: 100px;">
+    <h4>Repositories</h4>
+
+    <ul class="list-group">
+        {% for i in data.obj4  %}
+        <a href="{{i.1}}" class="btn btn-primary"> <li class="list-group-item">{{i.0}}</li></a>
+        {% endfor %}
+      
+      </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+
+    <style>
+        .container{
+            position: relative;
+            vertical-align: middle;
+            top: 200px;
+            left: 20px;
+            padding: 20px;
+            box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+              0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+            width: 500px;
+            border-radius: 20px;
+            font-weight: bolder;
+            /* background-color: rgb(45, 235, 45); */
+            
+        }
+        body{
+            background-color:rgba(222, 211, 211, 0.781);
+        }
+        /* .back{
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5727f125-4457-441b-865d-9d52144d0a2a/dd1p1xz-0268d1f8-1e76-4011-a135-367b70742c1d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU3MjdmMTI1LTQ0NTctNDQxYi04NjVkLTlkNTIxNDRkMGEyYVwvZGQxcDF4ei0wMjY4ZDFmOC0xZTc2LTQwMTEtYTEzNS0zNjdiNzA3NDJjMWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZopNYoMaN7FrtlNmKKUcJBsgEMSSAmB3YbfUfXRG5Jg');
+            width: 500px;
+        } */
+   
+        
+        
+
+    </style>
+</head>
+<body>
+    <div class="back" >
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5727f125-4457-441b-865d-9d52144d0a2a/dd1p1xz-0268d1f8-1e76-4011-a135-367b70742c1d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU3MjdmMTI1LTQ0NTctNDQxYi04NjVkLTlkNTIxNDRkMGEyYVwvZGQxcDF4ei0wMjY4ZDFmOC0xZTc2LTQwMTEtYTEzNS0zNjdiNzA3NDJjMWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZopNYoMaN7FrtlNmKKUcJBsgEMSSAmB3YbfUfXRG5Jg"  style="height: 600px;width: 600px;z-index: -1;position: absolute;left: 480px;top: 70px;">
+    <div class="container">
+        <form action="" method="POST">
+            {{form | crispy}}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Login</button>
+            <br><br>
+            Haven't registered yet?
+            <a href = "{% url 'signup' %}">Signup</a>
+        </form>
+        
+    </div>    
+</div>
+</body>
+</html>
